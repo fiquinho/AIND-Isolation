@@ -212,8 +212,58 @@ class MinimaxPlayer(IsolationPlayer):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
-        # TODO: finish this function!
-        raise NotImplementedError
+        best_move_score = float('-inf')
+        best_move = (-1, -1)
+
+        if len(game.get_legal_moves()) == 0:
+            return best_move
+        else:
+            for action in game.get_legal_moves():
+                new_game = game.forecast_move(action)
+
+                new_game_value = self.min_value(new_game, depth - 1)
+
+                if best_move_score <= new_game_value:
+                    best_move_score = new_game_value
+                    best_move = action
+
+            return best_move
+
+    def min_value(self, game, depth):
+        if self.time_left() < self.TIMER_THRESHOLD:
+            raise SearchTimeout()
+
+        if game.is_winner(game.active_player) == True or game.is_loser(game.active_player) == True:
+            return game.utility(game.active_player)
+
+        if depth <= 0:
+            return self.score()
+
+        score = float("inf")
+
+        for action in game.get_legal_moves():
+            new_game = game.forecast_move(action)
+            score = min(score, self.max_value(new_game, depth - 1))
+
+        return score
+
+    def max_value(self, game, depth):
+        if self.time_left() < self.TIMER_THRESHOLD:
+            raise SearchTimeout()
+
+        if game.is_winner(game.active_player) == True or game.is_loser(game.active_player) == True:
+            return game.utility(game.active_player)
+
+        if depth <= 0:
+            return self.score()
+
+        score = float("-inf")
+
+        for action in game.get_legal_moves():
+            new_game = game.forecast_move(action)
+            score = max(score, self.min_value(new_game, depth - 1))
+
+        return score
 
 
 class AlphaBetaPlayer(IsolationPlayer):
