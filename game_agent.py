@@ -236,8 +236,8 @@ class MinimaxPlayer(IsolationPlayer):
         if game.is_winner(game.active_player) == True or game.is_loser(game.active_player) == True:
             return game.utility(game.active_player)
 
-        if depth <= 0:
-            return self.score()
+        if depth < 0:
+            return self.score(game, game.active_player)
 
         score = float("inf")
 
@@ -254,8 +254,8 @@ class MinimaxPlayer(IsolationPlayer):
         if game.is_winner(game.active_player) == True or game.is_loser(game.active_player) == True:
             return game.utility(game.active_player)
 
-        if depth <= 0:
-            return self.score()
+        if depth < 0:
+            return self.score(game, game.active_player)
 
         score = float("-inf")
 
