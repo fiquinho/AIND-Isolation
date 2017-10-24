@@ -4,6 +4,8 @@ cases used by the project assistant are not public.
 """
 
 import unittest
+# See https://docs.python.org/3/library/unittest.html#basic-example for example
+
 import timeit
 
 import isolation
