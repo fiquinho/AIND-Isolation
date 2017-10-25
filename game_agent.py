@@ -233,7 +233,7 @@ class MinimaxPlayer(IsolationPlayer):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
-        if game.is_winner(game.active_player) == True or game.is_loser(game.active_player) == True:
+        if len(game.get_legal_moves()) == 0:
             return game.utility(player)
 
         if depth <= 0:
@@ -251,7 +251,7 @@ class MinimaxPlayer(IsolationPlayer):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
-        if game.is_winner(game.active_player) == True or game.is_loser(game.active_player) == True:
+        if len(game.get_legal_moves()) == 0:
             return game.utility(player)
 
         if depth <= 0:
