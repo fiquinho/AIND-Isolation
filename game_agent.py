@@ -35,7 +35,7 @@ def custom_score(game, player):
         The heuristic value of the current game state to the specified player.
     """
     # TODO: finish this function!
-    raise NotImplementedError
+    return len(game.get_legal_moves())
 
 
 def custom_score_2(game, player):
@@ -221,7 +221,7 @@ class MinimaxPlayer(IsolationPlayer):
             for action in game.get_legal_moves():
                 new_game = game.forecast_move(action)
 
-                new_game_value = self.min_value(new_game, depth - 1)
+                new_game_value = self.min_value(new_game, depth - 1, game.active_player)
 
                 if best_move_score <= new_game_value:
                     best_move_score = new_game_value
@@ -229,39 +229,39 @@ class MinimaxPlayer(IsolationPlayer):
 
             return best_move
 
-    def min_value(self, game, depth):
+    def min_value(self, game, depth, player):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
         if game.is_winner(game.active_player) == True or game.is_loser(game.active_player) == True:
-            return game.utility(game.active_player)
+            return game.utility(player)
 
-        if depth < 0:
-            return self.score(game, game.active_player)
+        if depth <= 0:
+            return self.score(game, player)
 
         score = float("inf")
 
         for action in game.get_legal_moves():
             new_game = game.forecast_move(action)
-            score = min(score, self.max_value(new_game, depth - 1))
+            score = min(score, self.max_value(new_game, depth - 1, player))
 
         return score
 
-    def max_value(self, game, depth):
+    def max_value(self, game, depth, player):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
         if game.is_winner(game.active_player) == True or game.is_loser(game.active_player) == True:
-            return game.utility(game.active_player)
+            return game.utility(player)
 
-        if depth < 0:
-            return self.score(game, game.active_player)
+        if depth <= 0:
+            return self.score(game, player)
 
         score = float("-inf")
 
         for action in game.get_legal_moves():
             new_game = game.forecast_move(action)
-            score = max(score, self.min_value(new_game, depth - 1))
+            score = max(score, self.min_value(new_game, depth - 1, player))
 
         return score
 
