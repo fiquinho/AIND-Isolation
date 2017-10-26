@@ -386,11 +386,12 @@ class AlphaBetaPlayer(IsolationPlayer):
         if len(game.get_legal_moves()) == 0:
             return game.utility(player), (-1, -1)
 
+        if last_move is None:
+            move = (-1, -1)
+        else:
+            move = last_move
+
         if depth <= 0:
-            if last_move is None:
-                move = (-1, -1)
-            else:
-                move = last_move
             return self.score(game, player), move
 
         score = float("-inf")
