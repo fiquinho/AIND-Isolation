@@ -35,7 +35,7 @@ def custom_score(game, player):
         The heuristic value of the current game state to the specified player.
     """
     # TODO: finish this function!
-    return len(game.get_legal_moves())
+    return float(len(game.get_legal_moves()))
 
 
 def custom_score_2(game, player):
@@ -61,7 +61,7 @@ def custom_score_2(game, player):
         The heuristic value of the current game state to the specified player.
     """
     # TODO: finish this function!
-    raise NotImplementedError
+    return float(len(game.get_legal_moves()))
 
 
 def custom_score_3(game, player):
@@ -87,7 +87,7 @@ def custom_score_3(game, player):
         The heuristic value of the current game state to the specified player.
     """
     # TODO: finish this function!
-    raise NotImplementedError
+    return float(len(game.get_legal_moves()))
 
 
 class IsolationPlayer:
