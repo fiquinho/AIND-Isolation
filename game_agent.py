@@ -34,8 +34,8 @@ def custom_score(game, player):
     float
         The heuristic value of the current game state to the specified player.
     """
-    # TODO: finish this function!
-    return float(len(game.get_legal_moves()))
+
+    return float(len(game.get_legal_moves(player)))
 
 
 def custom_score_2(game, player):
@@ -60,8 +60,15 @@ def custom_score_2(game, player):
     float
         The heuristic value of the current game state to the specified player.
     """
-    # TODO: finish this function!
-    return float(len(game.get_legal_moves()))
+
+    # My moves - Opponent moves -> Defensive style
+    defense = 1.5
+    offence = 0.5
+
+    my_moves = len(game.get_legal_moves(player))
+    opponent_moves = len(game.get_legal_moves(game.get_opponent(player)))
+
+    return float(my_moves * defense - opponent_moves * offence)
 
 
 def custom_score_3(game, player):
@@ -86,8 +93,15 @@ def custom_score_3(game, player):
     float
         The heuristic value of the current game state to the specified player.
     """
-    # TODO: finish this function!
-    return float(len(game.get_legal_moves()))
+
+    # My moves - Opponent moves -> Offensive style
+    defense = 0.5
+    offence = 1.5
+
+    my_moves = len(game.get_legal_moves(player))
+    opponent_moves = len(game.get_legal_moves(game.get_opponent(player)))
+
+    return float(my_moves * defense - opponent_moves * offence)
 
 
 class IsolationPlayer:
@@ -370,7 +384,7 @@ class AlphaBetaPlayer(IsolationPlayer):
             raise SearchTimeout()
 
         if len(game.get_legal_moves()) == 0:
-            return (-1, -1)
+            return -1, -1
         else:
             best_score, best_action = self.max_value(game, depth, alpha, beta, game.active_player)
 
