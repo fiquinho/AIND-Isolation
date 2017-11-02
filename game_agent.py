@@ -320,7 +320,10 @@ class AlphaBetaPlayer(IsolationPlayer):
 
         # Initialize the best move so that this function returns something
         # in case the search fails due to timeout
-        best_move = (-1, -1)
+        if len(game.get_legal_moves()) > 0:
+            best_move = game.get_legal_moves()[0]
+        else:
+            best_move = (-1, -1)
 
         depth = 1
 
