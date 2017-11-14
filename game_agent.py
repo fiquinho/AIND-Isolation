@@ -2,7 +2,7 @@
 test your agent's strength against a set of known agents using tournament.py
 and include the results in your report.
 """
-import random
+# import random
 
 
 class SearchTimeout(Exception):
@@ -115,7 +115,7 @@ class IsolationPlayer:
     search_depth : int (optional)
         A strictly positive integer (i.e., 1, 2, 3,...) for the number of
         layers in the game tree to explore for fixed-depth search. (i.e., a
-        depth of one (1) would only explore the immediate sucessors of the
+        depth of one (1) would only explore the immediate successors of the
         current state.)
 
     score_fn : callable (optional)
@@ -320,10 +320,12 @@ class AlphaBetaPlayer(IsolationPlayer):
 
         # Initialize the best move so that this function returns something
         # in case the search fails due to timeout
+        best_move = (-1, -1)
+
         if len(game.get_legal_moves()) > 0:
             best_move = game.get_legal_moves()[0]
         else:
-            best_move = (-1, -1)
+            return best_move
 
         depth = 1
 
@@ -386,64 +388,73 @@ class AlphaBetaPlayer(IsolationPlayer):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
-        if len(game.get_legal_moves()) == 0:
-            return -1, -1
-        else:
-            best_score, best_action = self.max_value(game, depth, alpha, beta, game.active_player)
+        _, best_move = self.max_value(game, depth, alpha, beta, game.active_player, first_move=True)
 
-            return best_action
+        return best_move
 
-    def max_value(self, game, depth, alpha, beta, player, last_move=None):
-        new_alpha = alpha
-        new_beta = beta
+    def max_value(self, game, depth, alpha, beta, player, first_move=False):
+        """
+        :param game:
+        :param depth:
+        :param alpha:
+        :param beta:
+        :param player:
+        :param first_move:
+        :return:
+        """
 
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
+        new_alpha = alpha
+        new_beta = beta
+        best_move = None
+
         if len(game.get_legal_moves()) == 0:
-            return game.utility(player), (-1, -1)
-
-        if last_move is None:
-            move = (-1, -1)
-        else:
-            move = last_move
-
-        if depth <= 0:
-            return self.score(game, player), move
+            return game.utility(player), best_move
 
         score = float("-inf")
+
         for action in game.get_legal_moves():
             new_game = game.forecast_move(action)
 
-            new_score = self.min_value(new_game, depth - 1, new_alpha, new_beta, player)
+            if (depth - 1) > 0:
+                new_score = self.min_value(new_game, depth - 1, new_alpha, new_beta, player)
+            else:
+                new_score = self.score(game, player)
+
             if new_score > score:
                 score = new_score
-                move = action
+                if first_move:
+                    best_move = action
 
             if score >= new_beta:
-                return score, action
+                return score, best_move
 
             new_alpha = max(new_alpha, score)
 
-        return score, move
+        return score, best_move
 
     def min_value(self, game, depth, alpha, beta, player):
-        new_alpha = alpha
-        new_beta = beta
 
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
+
+        new_alpha = alpha
+        new_beta = beta
 
         if len(game.get_legal_moves()) == 0:
             return game.utility(player)
 
-        if depth <= 0:
-            return self.score(game, player)
-
         score = float("inf")
         for action in game.get_legal_moves():
             new_game = game.forecast_move(action)
-            new_score, _ = self.max_value(new_game, depth - 1, new_alpha, new_beta, player)
+
+            if (depth - 1) > 0:
+                new_score, _ = self.max_value(new_game, depth - 1, new_alpha, new_beta, player)
+            else:
+                new_score = self.score(game, player)
+
             score = min(score, new_score)
 
             if score <= new_alpha:
