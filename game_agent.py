@@ -226,6 +226,7 @@ class MinimaxPlayer(IsolationPlayer):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
+        # Initialize values
         best_move_score = float('-inf')
         best_move = (-1, -1)
 
@@ -336,7 +337,8 @@ class AlphaBetaPlayer(IsolationPlayer):
                 # The try/except block will automatically catch the exception
                 # raised when the timer is about to expire.
                 best_move = self.alphabeta(game, depth)
-                depth += 1
+                return best_move
+                # depth += 1
 
             except SearchTimeout:
                 # Return the best move from the last completed search iteration
@@ -387,8 +389,8 @@ class AlphaBetaPlayer(IsolationPlayer):
                 each helper function or else your agent will timeout during
                 testing.
         """
-        if self.time_left() < self.TIMER_THRESHOLD:
-            raise SearchTimeout()
+        #if self.time_left() < self.TIMER_THRESHOLD:
+        #    raise SearchTimeout()
 
         alpha_score = alpha
         beta_score = beta
@@ -410,8 +412,8 @@ class AlphaBetaPlayer(IsolationPlayer):
 
     def max_value(self, game, depth, alpha, beta, player):
 
-        if self.time_left() < self.TIMER_THRESHOLD:
-            raise SearchTimeout()
+        #if self.time_left() < self.TIMER_THRESHOLD:
+        #    raise SearchTimeout()
 
         new_alpha = alpha
         new_beta = beta
@@ -440,8 +442,8 @@ class AlphaBetaPlayer(IsolationPlayer):
 
     def min_value(self, game, depth, alpha, beta, player):
 
-        if self.time_left() < self.TIMER_THRESHOLD:
-            raise SearchTimeout()
+        #if self.time_left() < self.TIMER_THRESHOLD:
+        #    raise SearchTimeout()
 
         new_alpha = alpha
         new_beta = beta
