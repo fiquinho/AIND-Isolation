@@ -337,8 +337,7 @@ class AlphaBetaPlayer(IsolationPlayer):
                 # The try/except block will automatically catch the exception
                 # raised when the timer is about to expire.
                 best_move = self.alphabeta(game, depth)
-                return best_move
-                # depth += 1
+                depth += 1
 
             except SearchTimeout:
                 # Return the best move from the last completed search iteration
@@ -389,8 +388,8 @@ class AlphaBetaPlayer(IsolationPlayer):
                 each helper function or else your agent will timeout during
                 testing.
         """
-        #if self.time_left() < self.TIMER_THRESHOLD:
-        #    raise SearchTimeout()
+        if self.time_left() < self.TIMER_THRESHOLD:
+            raise SearchTimeout()
 
         alpha_score = alpha
         beta_score = beta
@@ -402,7 +401,7 @@ class AlphaBetaPlayer(IsolationPlayer):
         for action in game.get_legal_moves():
 
             new_board = game.forecast_move(action)
-            score = max(score, self.min_value(new_board, depth - 1, alpha_score, beta_score, game.active_player))
+            score = max(score, self.min_value(new_board, depth, alpha_score, beta_score, game.active_player))
 
             if score > alpha_score:
                 alpha_score = score
@@ -412,8 +411,8 @@ class AlphaBetaPlayer(IsolationPlayer):
 
     def max_value(self, game, depth, alpha, beta, player):
 
-        #if self.time_left() < self.TIMER_THRESHOLD:
-        #    raise SearchTimeout()
+        if self.time_left() < self.TIMER_THRESHOLD:
+            raise SearchTimeout()
 
         new_alpha = alpha
         new_beta = beta
@@ -423,27 +422,28 @@ class AlphaBetaPlayer(IsolationPlayer):
 
         score = float("-inf")
 
-        for action in game.get_legal_moves(player):
-            new_game = game.forecast_move(action)
+        if (depth - 1) <= 0:
+            new_score = self.score(game, player)
+            return new_score
+        else:
+            for action in game.get_legal_moves(player):
+                new_game = game.forecast_move(action)
 
-            if (depth - 1) > 0:
                 new_score = self.min_value(new_game, depth - 1, new_alpha, new_beta, player)
-            else:
-                new_score = self.score(game, player)
 
-            score = max(score, new_score)
+                score = max(score, new_score)
 
-            if score >= new_beta:
-                return score
+                if score >= new_beta:
+                    return score
 
-            new_alpha = max(new_alpha, score)
+                new_alpha = max(new_alpha, score)
 
-        return score
+            return score
 
     def min_value(self, game, depth, alpha, beta, player):
 
-        #if self.time_left() < self.TIMER_THRESHOLD:
-        #    raise SearchTimeout()
+        if self.time_left() < self.TIMER_THRESHOLD:
+            raise SearchTimeout()
 
         new_alpha = alpha
         new_beta = beta
@@ -452,19 +452,21 @@ class AlphaBetaPlayer(IsolationPlayer):
             return game.utility(player)
 
         score = float("inf")
-        for action in game.get_legal_moves(game.get_opponent(player)):
-            new_game = game.forecast_move(action)
 
-            if (depth - 1) > 0:
+        if (depth - 1) <= 0:
+            new_score = self.score(game, player)
+            return new_score
+        else:
+            for action in game.get_legal_moves(game.get_opponent(player)):
+                new_game = game.forecast_move(action)
+
                 new_score = self.max_value(new_game, depth - 1, new_alpha, new_beta, player)
-            else:
-                new_score = self.score(game, player)
 
-            score = min(score, new_score)
+                score = min(score, new_score)
 
-            if score <= new_alpha:
-                return score
+                if score <= new_alpha:
+                    return score
 
-            new_beta = min(new_beta, score)
+                new_beta = min(new_beta, score)
 
-        return score
+            return score
