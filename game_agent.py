@@ -35,6 +35,10 @@ def custom_score(game, player):
         The heuristic value of the current game state to the specified player.
     """
 
+    # First it evaluates if there are any moves that are available for both player.
+    # If there are and is the agents turn, they sum to the score, if it's the
+    # opponents turn, they are subtracted from the score
+
     my_moves = game.get_legal_moves(player)
     opponent_moves = game.get_legal_moves(game.get_opponent(player))
 
