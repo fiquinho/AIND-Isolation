@@ -35,8 +35,18 @@ def custom_score(game, player):
         The heuristic value of the current game state to the specified player.
     """
 
-    return float(len(game.get_legal_moves(player)))
+    my_moves = game.get_legal_moves(player)
+    opponent_moves = game.get_legal_moves(game.get_opponent(player))
 
+    counter = 0
+    for move in my_moves:
+        if move in opponent_moves:
+            counter += 1
+
+    if game.active_player != player:
+        counter = counter * (-1)
+
+    return float(len(my_moves) - len(opponent_moves) + counter)
 
 def custom_score_2(game, player):
     """Calculate the heuristic value of a game state from the point of view
