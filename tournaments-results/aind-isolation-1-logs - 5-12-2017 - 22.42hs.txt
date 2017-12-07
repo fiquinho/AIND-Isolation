@@ -1,0 +1,112 @@
+2017-12-05 17:42:53,336 INFO - Preparing to run TaskInstance <TaskInstance: fiquinho/projects/aind-isolation/1 (id: gK2a5nWFP2CKtBz6HgmXua)
+2017-12-05 17:42:53,348 INFO - Starting attempt 1 at 2017-12-06 01:42:53.340789
+2017-12-05 17:42:53,352 INFO - Downloading and setting up data sources
+2017-12-05 17:42:53,441 INFO - Pulling Docker image: floydhub/tensorflow:1.1.0-py3_aws.7
+2017-12-05 17:42:54,608 INFO - Starting container...
+2017-12-05 17:42:54,785 INFO - 
+################################################################################
+
+2017-12-05 17:42:54,785 INFO - Run Output:
+2017-12-05 17:42:54,848 INFO - 
+2017-12-05 17:42:54,848 INFO - This script evaluates the performance of the custom_score evaluation
+2017-12-05 17:42:54,849 INFO - function against a baseline agent using alpha-beta search and iterative
+2017-12-05 17:42:54,849 INFO - deepening (ID) called `AB_Improved`. The three `AB_Custom` agents use
+2017-12-05 17:42:54,849 INFO - ID and alpha-beta search with the custom_score functions defined in
+2017-12-05 17:42:54,850 INFO - game_agent.py.
+2017-12-05 17:42:54,850 INFO - 
+2017-12-05 17:42:54,850 INFO - *************************
+2017-12-05 17:42:54,851 INFO - Playing Matches
+2017-12-05 17:42:54,851 INFO - *************************
+2017-12-05 17:42:54,851 INFO - *************************
+2017-12-05 17:42:54,852 INFO - Playing Tournament N° 0
+2017-12-05 17:42:54,852 INFO - *************************
+2017-12-05 17:42:54,852 INFO - 
+2017-12-05 17:42:54,852 INFO - Match #   Opponent    AB_Improved   AB_Custom   AB_Custom_2  AB_Custom_3
+2017-12-05 17:42:54,853 INFO - Won | Lost   Won | Lost   Won | Lost   Won | Lost
+2017-12-05 17:44:02,524 INFO - 1       Random      10  |   0     9  |   1     8  |   2     9  |   1
+2017-12-05 17:45:15,562 INFO - 2       MM_Open      6  |   4     8  |   2     7  |   3     8  |   2
+2017-12-05 17:46:26,553 INFO - 3      MM_Center     8  |   2     8  |   2     9  |   1     9  |   1
+2017-12-05 17:47:41,431 INFO - 4     MM_Improved    9  |   1     9  |   1     9  |   1     7  |   3
+2017-12-05 17:50:05,982 INFO - 5       AB_Open      7  |   3     7  |   3     4  |   6     6  |   4
+2017-12-05 17:52:26,051 INFO - 6      AB_Center     6  |   4     8  |   2     4  |   6     6  |   4
+2017-12-05 17:54:50,324 INFO - 7     AB_Improved    5  |   5     5  |   5     4  |   6     2  |   8
+2017-12-05 17:54:50,328 INFO - --------------------------------------------------------------------------
+2017-12-05 17:54:50,328 INFO - Win Rate:      72.9%        77.1%        64.3%        67.1%
+2017-12-05 17:54:50,329 INFO - *************************
+2017-12-05 17:54:50,329 INFO - Playing Tournament N° 1
+2017-12-05 17:54:50,329 INFO - *************************
+2017-12-05 17:54:50,330 INFO - 
+2017-12-05 17:54:50,330 INFO - Match #   Opponent    AB_Improved   AB_Custom   AB_Custom_2  AB_Custom_3
+2017-12-05 17:54:50,330 INFO - Won | Lost   Won | Lost   Won | Lost   Won | Lost
+2017-12-05 17:55:51,834 INFO - 1       Random      10  |   0     9  |   1     9  |   1     8  |   2
+2017-12-05 17:57:09,250 INFO - 2       MM_Open      8  |   2    10  |   0    10  |   0     8  |   2
+2017-12-05 17:58:22,771 INFO - 3      MM_Center     9  |   1     7  |   3     8  |   2     9  |   1
+2017-12-05 17:59:36,312 INFO - 4     MM_Improved    9  |   1     7  |   3    10  |   0     8  |   2
+2017-12-05 18:02:02,963 INFO - 5       AB_Open      8  |   2     7  |   3     5  |   5     5  |   5
+2017-12-05 18:04:21,350 INFO - 6      AB_Center     4  |   6     8  |   2     5  |   5     5  |   5
+2017-12-05 18:06:44,361 INFO - 7     AB_Improved    5  |   5     4  |   6     8  |   2     3  |   7
+2017-12-05 18:06:44,363 INFO - --------------------------------------------------------------------------
+2017-12-05 18:06:44,364 INFO - Win Rate:      75.7%        74.3%        78.6%        65.7%
+2017-12-05 18:06:44,364 INFO - *************************
+2017-12-05 18:06:44,364 INFO - Playing Tournament N° 2
+2017-12-05 18:06:44,365 INFO - *************************
+2017-12-05 18:06:44,365 INFO - 
+2017-12-05 18:06:44,365 INFO - Match #   Opponent    AB_Improved   AB_Custom   AB_Custom_2  AB_Custom_3
+2017-12-05 18:06:44,366 INFO - Won | Lost   Won | Lost   Won | Lost   Won | Lost
+2017-12-05 18:07:52,596 INFO - 1       Random       8  |   2     9  |   1    10  |   0    10  |   0
+2017-12-05 18:09:07,915 INFO - 2       MM_Open      7  |   3     9  |   1    10  |   0     7  |   3
+2017-12-05 18:10:18,486 INFO - 3      MM_Center     8  |   2     6  |   4     8  |   2     7  |   3
+2017-12-05 18:11:32,886 INFO - 4     MM_Improved    8  |   2     7  |   3     9  |   1     7  |   3
+2017-12-05 18:13:55,198 INFO - 5       AB_Open      5  |   5     6  |   4     4  |   6     5  |   5
+2017-12-05 18:16:17,088 INFO - 6      AB_Center     7  |   3     6  |   4     6  |   4     6  |   4
+2017-12-05 18:18:40,379 INFO - 7     AB_Improved    5  |   5     8  |   2     5  |   5     5  |   5
+2017-12-05 18:18:40,382 INFO - --------------------------------------------------------------------------
+2017-12-05 18:18:40,382 INFO - Win Rate:      68.6%        72.9%        74.3%        67.1%
+2017-12-05 18:18:40,382 INFO - *************************
+2017-12-05 18:18:40,383 INFO - Playing Tournament N° 3
+2017-12-05 18:18:40,383 INFO - *************************
+2017-12-05 18:18:40,383 INFO - 
+2017-12-05 18:18:40,384 INFO - Match #   Opponent    AB_Improved   AB_Custom   AB_Custom_2  AB_Custom_3
+2017-12-05 18:18:40,384 INFO - Won | Lost   Won | Lost   Won | Lost   Won | Lost
+2017-12-05 18:19:48,613 INFO - 1       Random      10  |   0     8  |   2     9  |   1     9  |   1
+2017-12-05 18:21:02,453 INFO - 2       MM_Open      9  |   1     8  |   2     9  |   1     7  |   3
+2017-12-05 18:22:14,689 INFO - 3      MM_Center     9  |   1     9  |   1     9  |   1     8  |   2
+2017-12-05 18:23:27,647 INFO - 4     MM_Improved    7  |   3     5  |   5     8  |   2     7  |   3
+2017-12-05 18:25:51,776 INFO - 5       AB_Open      5  |   5     4  |   6     4  |   6     3  |   7
+2017-12-05 18:28:08,903 INFO - 6      AB_Center     6  |   4     6  |   4     5  |   5     7  |   3
+2017-12-05 18:30:27,574 INFO - 7     AB_Improved    4  |   6     5  |   5     5  |   5     4  |   6
+2017-12-05 18:30:27,577 INFO - --------------------------------------------------------------------------
+2017-12-05 18:30:27,577 INFO - Win Rate:      71.4%        64.3%        70.0%        64.3%
+2017-12-05 18:30:27,577 INFO - *************************
+2017-12-05 18:30:27,578 INFO - Playing Tournament N° 4
+2017-12-05 18:30:27,578 INFO - *************************
+2017-12-05 18:30:27,578 INFO - 
+2017-12-05 18:30:27,579 INFO - Match #   Opponent    AB_Improved   AB_Custom   AB_Custom_2  AB_Custom_3
+2017-12-05 18:30:27,579 INFO - Won | Lost   Won | Lost   Won | Lost   Won | Lost
+2017-12-05 18:31:31,187 INFO - 1       Random       9  |   1     9  |   1    10  |   0    10  |   0
+2017-12-05 18:32:48,957 INFO - 2       MM_Open      8  |   2     8  |   2     9  |   1     7  |   3
+2017-12-05 18:34:00,514 INFO - 3      MM_Center     8  |   2     8  |   2     9  |   1    10  |   0
+2017-12-05 18:35:14,320 INFO - 4     MM_Improved    9  |   1     8  |   2     8  |   2     6  |   4
+2017-12-05 18:37:33,549 INFO - 5       AB_Open      8  |   2     6  |   4     4  |   6     7  |   3
+2017-12-05 18:39:48,576 INFO - 6      AB_Center     3  |   7     7  |   3     6  |   4     7  |   3
+2017-12-05 18:42:12,569 INFO - 7     AB_Improved    4  |   6     5  |   5     4  |   6     6  |   4
+2017-12-05 18:42:12,572 INFO - --------------------------------------------------------------------------
+2017-12-05 18:42:12,573 INFO - Win Rate:      70.0%        72.9%        71.4%        75.7%
+2017-12-05 18:42:12,573 INFO - *************************
+2017-12-05 18:42:12,573 INFO - Final results
+2017-12-05 18:42:12,573 INFO - *************************
+2017-12-05 18:42:12,574 INFO - [[72.85714285714286, 77.14285714285714, 64.28571428571429, 67.14285714285714], [75.71428571428571, 74.28571428571429, 78.57142857142857, 65.71428571428571], [68.57142857142857, 72.85714285714286, 74.28571428571429, 67.14285714285714], [71.42857142857143, 64.28571428571429, 70.0, 64.28571428571429], [70.0, 72.85714285714286, 71.42857142857143, 75.71428571428571]]
+2017-12-05 18:42:12,574 INFO - Traceback (most recent call last):
+2017-12-05 18:42:12,574 INFO - File "personal_tournament.py", line 180, in <module>
+2017-12-05 18:42:12,575 INFO - main()
+2017-12-05 18:42:12,575 INFO - File "personal_tournament.py", line 177, in main
+2017-12-05 18:42:12,575 INFO - output.write(results)
+2017-12-05 18:42:12,575 INFO - TypeError: write() argument must be str, not list
+2017-12-05 18:42:12,628 INFO - 
+################################################################################
+
+2017-12-05 18:42:12,628 INFO - Waiting for container to complete...
+2017-12-05 18:42:12,830 INFO - Job exited with status code: 1
+2017-12-05 18:42:12,837 INFO - Creating data module for output...
+2017-12-05 18:42:13,170 INFO - Data module created for output.
+2017-12-05 18:42:13,170 INFO - [failed] Task execution failed in 3559 seconds for TaskInstance <TaskInstance: fiquinho/projects/aind-isolation/1 (id: gK2a5nWFP2CKtBz6HgmXua)
