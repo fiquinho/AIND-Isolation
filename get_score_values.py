@@ -11,8 +11,8 @@ cpu_agent_AB_improved = AlphaBetaPlayer(score_fn=improved_score)
 
 # Create global variables
 DATE = datetime.datetime.now()
-RESULTS = "output/1v1-results - {}-{}-{} - {}.{}hs.txt".format(DATE.day, DATE.month, DATE.year, DATE.hour, DATE.minute)
-NUMBER_OF_MATCHES = 1
+RESULTS = "/output/1v1-results - {}-{}-{} - {}.{}hs.txt".format(DATE.day, DATE.month, DATE.year, DATE.hour, DATE.minute)
+NUMBER_OF_MATCHES = 200
 
 # Play NUMBER_OF_MATCHES matches - AB_normal vs cpu_agent_AB_improved
 AB_normal = AlphaBetaPlayer(score_fn=custom_score)
@@ -69,7 +69,6 @@ best_offensive_value = 0
 starting_offensive_value = 1
 
 for i in range(10):
-    start_match = time.time()
     offensive_value = starting_offensive_value + (i * 0.25)
 
     AB_offensive = AlphaBetaPlayer(score_fn=custom_score_3, offensive_value=offensive_value, defensive_value=0.5)
@@ -138,7 +137,6 @@ best_defensive_value = 0
 starting_defensive_value = 1
 
 for i in range(10):
-    start_match = time.time()
     defensive_value = starting_defensive_value + (i * 0.25)
 
     AB_defensive = AlphaBetaPlayer(score_fn=custom_score_2, offensive_value=0.5, defensive_value=defensive_value)
@@ -197,4 +195,3 @@ print("Best defensive value = {}".format(best_defensive_value))
 print("----------------------------------------")
 print("########################################")
 print("----------------------------------------")
-

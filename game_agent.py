@@ -3,6 +3,7 @@ test your agent's strength against a set of known agents using tournament.py
 and include the results in your report.
 """
 # import random
+from isolation import Board
 
 
 class SearchTimeout(Exception):
@@ -10,7 +11,7 @@ class SearchTimeout(Exception):
     pass
 
 
-def custom_score(game, player, defence = 1., offence = 1.):
+def custom_score(game: Board, player, defence = 1., offence = 1.) -> float:
     """Calculate the heuristic value of a game state from the point of view
     of the given player.
 
@@ -262,7 +263,7 @@ class MinimaxPlayer(IsolationPlayer):
 
             return best_move
 
-    def min_value(self, game, depth, player):
+    def min_value(self, game: Board, depth: int, player: IsolationPlayer) -> float:
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
@@ -280,7 +281,7 @@ class MinimaxPlayer(IsolationPlayer):
 
         return score
 
-    def max_value(self, game, depth, player):
+    def max_value(self, game: Board, depth: int, player: IsolationPlayer) -> float:
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
