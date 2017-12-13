@@ -68,7 +68,7 @@ def open_move_score(game, player):
     return float(len(game.get_legal_moves(player)))
 
 
-def improved_score(game, player):
+def improved_score(game, player, defence=1., offence=1.0):
     """The "Improved" evaluation function discussed in lecture that outputs a
     score equal to the difference in the number of moves available to the
     two players.

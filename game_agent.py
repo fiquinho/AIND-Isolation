@@ -10,7 +10,7 @@ class SearchTimeout(Exception):
     pass
 
 
-def custom_score(game, player):
+def custom_score(game, player, defence = 1., offence = 1.):
     """Calculate the heuristic value of a game state from the point of view
     of the given player.
 
@@ -53,7 +53,7 @@ def custom_score(game, player):
     return float(len(my_moves) - len(opponent_moves) + counter)
 
 
-def custom_score_2(game, player, defence = 1.75, offence = 0.5):
+def custom_score_2(game, player, defence = 1., offence = 0.5):
     """Calculate the heuristic value of a game state from the point of view
     of the given player.
 
@@ -86,7 +86,7 @@ def custom_score_2(game, player, defence = 1.75, offence = 0.5):
     return float(my_moves * defence - opponent_moves * offence)
 
 
-def custom_score_3(game, player, defence = 0.5, offence = 1.75):
+def custom_score_3(game, player, defence = 0.5, offence = 1.):
     """Calculate the heuristic value of a game state from the point of view
     of the given player.
 
@@ -141,11 +141,14 @@ class IsolationPlayer:
         positive value large enough to allow the function to return before the
         timer expires.
     """
-    def __init__(self, search_depth=3, score_fn=custom_score, timeout=10.):
+    def __init__(self, search_depth=3, score_fn=custom_score, timeout=10., offensive_value=1., defensive_value=1):
         self.search_depth = search_depth
         self.score = score_fn
         self.time_left = None
         self.TIMER_THRESHOLD = timeout
+
+        self.offensive_score = offensive_value
+        self.defensive_score = defensive_value
 
 
 class MinimaxPlayer(IsolationPlayer):
@@ -438,7 +441,7 @@ class AlphaBetaPlayer(IsolationPlayer):
         score = float("-inf")
 
         if (depth - 1) <= 0:
-            new_score = self.score(game, player)
+            new_score = self.score(game, player, defence=self.defensive_score, offence=self.offensive_score)
             return new_score
         else:
             for action in game.get_legal_moves(player):
@@ -469,7 +472,7 @@ class AlphaBetaPlayer(IsolationPlayer):
         score = float("inf")
 
         if (depth - 1) <= 0:
-            new_score = self.score(game, player)
+            new_score = self.score(game, player, defence=self.defensive_score, offence=self.offensive_score)
             return new_score
         else:
             for action in game.get_legal_moves(game.get_opponent(player)):
