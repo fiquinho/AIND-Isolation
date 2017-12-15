@@ -5,7 +5,7 @@ import datetime
 from isolation import Board
 from sample_players import improved_score
 from game_agent import AlphaBetaPlayer, custom_score, custom_score_2, custom_score_3
-from statistics_utils import print_big_separator, print_and_write_statistics
+import statistics_utils as stats
 
 
 def create_players(offensive_values: List[float] = None, defensive_values: List[float] = None) -> List[tuple]:
@@ -42,8 +42,17 @@ NUMBER_OF_MATCHES = 1000
 offensive_scores = [1., 2., 3.]
 defensive_scores = [1., 2., 3.]
 
-# TODO: Print general data of this particular run (DATE?, NUMBER_OF_MATCHES, offensive_scores, defensive_scores)
+# Print general data of this particular run
+TITLE = """
+Playing {} matches against a CPU agent using AB_improved score.
+The objective of this run is to test different values of offensive 
+and defensive scores.
+Offensive values: {}
+Defensive values: {}""".format(NUMBER_OF_MATCHES, offensive_scores, defensive_scores)
 
+stats.print_general_statistics(RESULTS, TITLE, DATE)
+
+# Create list with all the agents that will challenge CPU_agent
 agent_players = create_players(offensive_scores, defensive_scores)
 agent_players.append(("Normal_player", AlphaBetaPlayer(score_fn=custom_score)))
 
@@ -84,12 +93,12 @@ for agent in agent_players:
         defensive_score = agent_player.defensive_score
 
     # Print statistics
-    print_and_write_statistics(RESULTS,
-                               [agent_name, CPU_agent[0]],
-                               total_wins,
-                               total_time,
-                               NUMBER_OF_MATCHES,
-                               offensive_value=offensive_score,
-                               defensive_value=defensive_score)
+    stats.print_and_write_statistics(RESULTS,
+                                     [agent_name, CPU_agent[0]],
+                                     total_wins,
+                                     total_time,
+                                     NUMBER_OF_MATCHES,
+                                     offensive_value=offensive_score,
+                                     defensive_value=defensive_score)
 
-    print_big_separator(RESULTS)
+    stats.print_big_separator(RESULTS)
