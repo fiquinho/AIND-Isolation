@@ -1,4 +1,5 @@
 from typing import List
+import datetime
 
 
 def print_simple_separator(results_file: str) -> None:
@@ -59,3 +60,14 @@ def print_and_write_statistics(results_file: str,
         output.write(win_rate + "\n")
         output.write(avg_match_time + "\n")
         output.write(elapsed_time + "\n")
+
+
+def print_general_statistics(results_file: str, title: str, date: datetime) -> None:
+
+    print("Starting script at: {}-{}-{} - {}.{}hs.txt".format(date.day, date.month, date.year, date.hour, date.minute))
+    print(title)
+
+    with open(results_file, 'a') as output:
+        output.write(title + "\n")
+
+    print_big_separator(results_file)
