@@ -1,0 +1,158 @@
+2017-12-13 14:24:19,570 INFO - Preparing to run TaskInstance <TaskInstance: fiquinho/projects/aind-isolation/12 (id: gqzQeXii75V4YM6W5vbrcg)
+2017-12-13 14:24:19,586 INFO - Starting attempt 1 at 2017-12-13 22:24:19.576933
+2017-12-13 14:24:19,592 INFO - Downloading and setting up data sources
+2017-12-13 14:24:19,686 INFO - Pulling Docker image: floydhub/tensorflow:1.1.0-py3_aws.7
+2017-12-13 14:24:20,820 INFO - Starting container...
+2017-12-13 14:24:21,014 INFO - 
+################################################################################
+
+2017-12-13 14:24:21,014 INFO - Run Output:
+2017-12-13 14:36:13,608 INFO - AB_normal vs cpu_agent_AB_improved
+2017-12-13 14:36:13,611 INFO - Win rate = 0.49
+2017-12-13 14:36:13,611 INFO - Average match time = 3.5627140831947326 seconds
+2017-12-13 14:36:13,611 INFO - Total elapsed time = 11.87571361064911 minutes
+2017-12-13 14:36:13,612 INFO - ----------------------------------------
+2017-12-13 14:36:13,612 INFO - ########################################
+2017-12-13 14:36:13,612 INFO - ----------------------------------------
+2017-12-13 14:48:01,253 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 14:48:01,255 INFO - Offensive value = 1.0
+2017-12-13 14:48:01,255 INFO - Win rate = 0.49
+2017-12-13 14:48:01,256 INFO - Average match time = 3.5382170164585114 seconds
+2017-12-13 14:48:01,256 INFO - Total elapsed time = 11.79405672152837 minutes
+2017-12-13 14:48:01,256 INFO - ----------------------------------------
+2017-12-13 14:59:41,896 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 14:59:41,898 INFO - Offensive value = 1.25
+2017-12-13 14:59:41,899 INFO - Win rate = 0.49
+2017-12-13 14:59:41,899 INFO - Average match time = 3.503211534023285 seconds
+2017-12-13 14:59:41,899 INFO - Total elapsed time = 11.677371780077616 minutes
+2017-12-13 14:59:41,900 INFO - ----------------------------------------
+2017-12-13 15:11:21,554 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 15:11:21,556 INFO - Offensive value = 1.5
+2017-12-13 15:11:21,557 INFO - Win rate = 0.49
+2017-12-13 15:11:21,557 INFO - Average match time = 3.4982852542400362 seconds
+2017-12-13 15:11:21,557 INFO - Total elapsed time = 11.660950847466786 minutes
+2017-12-13 15:11:21,558 INFO - ----------------------------------------
+2017-12-13 15:22:55,892 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 15:22:55,894 INFO - Offensive value = 1.75
+2017-12-13 15:22:55,895 INFO - Win rate = 0.445
+2017-12-13 15:22:55,895 INFO - Average match time = 3.4716836893558503 seconds
+2017-12-13 15:22:55,895 INFO - Total elapsed time = 11.572278964519501 minutes
+2017-12-13 15:22:55,896 INFO - ----------------------------------------
+2017-12-13 15:34:21,966 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 15:34:21,968 INFO - Offensive value = 2.0
+2017-12-13 15:34:21,968 INFO - Win rate = 0.44
+2017-12-13 15:34:21,969 INFO - Average match time = 3.430366448163986 seconds
+2017-12-13 15:34:21,969 INFO - Total elapsed time = 11.434554827213287 minutes
+2017-12-13 15:34:21,969 INFO - ----------------------------------------
+2017-12-13 15:45:48,741 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 15:45:48,743 INFO - Offensive value = 2.25
+2017-12-13 15:45:48,743 INFO - Win rate = 0.51
+2017-12-13 15:45:48,744 INFO - Average match time = 3.433868706226349 seconds
+2017-12-13 15:45:48,744 INFO - Total elapsed time = 11.446229020754496 minutes
+2017-12-13 15:45:48,744 INFO - ----------------------------------------
+2017-12-13 15:57:21,675 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 15:57:21,677 INFO - Offensive value = 2.5
+2017-12-13 15:57:21,678 INFO - Win rate = 0.55
+2017-12-13 15:57:21,678 INFO - Average match time = 3.46466970205307 seconds
+2017-12-13 15:57:21,678 INFO - Total elapsed time = 11.548899006843566 minutes
+2017-12-13 15:57:21,679 INFO - ----------------------------------------
+2017-12-13 16:08:59,234 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 16:08:59,239 INFO - Offensive value = 2.75
+2017-12-13 16:08:59,239 INFO - Win rate = 0.525
+2017-12-13 16:08:59,240 INFO - Average match time = 3.487788209915161 seconds
+2017-12-13 16:08:59,240 INFO - Total elapsed time = 11.625960699717204 minutes
+2017-12-13 16:08:59,240 INFO - ----------------------------------------
+2017-12-13 16:20:29,649 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 16:20:29,651 INFO - Offensive value = 3.0
+2017-12-13 16:20:29,651 INFO - Win rate = 0.515
+2017-12-13 16:20:29,651 INFO - Average match time = 3.452069345712662 seconds
+2017-12-13 16:20:29,652 INFO - Total elapsed time = 11.506897819042205 minutes
+2017-12-13 16:20:29,652 INFO - ----------------------------------------
+2017-12-13 16:31:58,243 INFO - AB_offensive vs cpu_agent_AB_improved
+2017-12-13 16:31:58,245 INFO - Offensive value = 3.25
+2017-12-13 16:31:58,245 INFO - Win rate = 0.525
+2017-12-13 16:31:58,245 INFO - Average match time = 3.4429649686813355 seconds
+2017-12-13 16:31:58,246 INFO - Total elapsed time = 11.476549895604451 minutes
+2017-12-13 16:31:58,246 INFO - ----------------------------------------
+2017-12-13 16:31:58,247 INFO - ########################################
+2017-12-13 16:31:58,247 INFO - ----------------------------------------
+2017-12-13 16:31:58,247 INFO - Best win rate = 0.55
+2017-12-13 16:31:58,247 INFO - Best offensive value = 2.5
+2017-12-13 16:31:58,248 INFO - ----------------------------------------
+2017-12-13 16:31:58,248 INFO - ########################################
+2017-12-13 16:31:58,248 INFO - ----------------------------------------
+2017-12-13 16:44:05,636 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 16:44:05,638 INFO - Defensive value = 1.0
+2017-12-13 16:44:05,639 INFO - Win rate = 0.53
+2017-12-13 16:44:05,639 INFO - Average match time = 3.6369538509845736 seconds
+2017-12-13 16:44:05,639 INFO - Total elapsed time = 12.12317950328191 minutes
+2017-12-13 16:44:05,640 INFO - ----------------------------------------
+2017-12-13 16:56:15,412 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 16:56:15,414 INFO - Defensive value = 1.25
+2017-12-13 16:56:15,415 INFO - Win rate = 0.495
+2017-12-13 16:56:15,415 INFO - Average match time = 3.648876030445099 seconds
+2017-12-13 16:56:15,415 INFO - Total elapsed time = 12.162920101483662 minutes
+2017-12-13 16:56:15,416 INFO - ----------------------------------------
+2017-12-13 17:08:22,947 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 17:08:22,949 INFO - Defensive value = 1.5
+2017-12-13 17:08:22,949 INFO - Win rate = 0.55
+2017-12-13 17:08:22,949 INFO - Average match time = 3.637667385339737 seconds
+2017-12-13 17:08:22,950 INFO - Total elapsed time = 12.125557951132457 minutes
+2017-12-13 17:08:22,950 INFO - ----------------------------------------
+2017-12-13 17:20:28,378 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 17:20:28,380 INFO - Defensive value = 1.75
+2017-12-13 17:20:28,380 INFO - Win rate = 0.49
+2017-12-13 17:20:28,381 INFO - Average match time = 3.627151256799698 seconds
+2017-12-13 17:20:28,381 INFO - Total elapsed time = 12.090504189332327 minutes
+2017-12-13 17:20:28,381 INFO - ----------------------------------------
+2017-12-13 17:32:32,412 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 17:32:32,414 INFO - Defensive value = 2.0
+2017-12-13 17:32:32,414 INFO - Win rate = 0.5
+2017-12-13 17:32:32,415 INFO - Average match time = 3.6201652872562406 seconds
+2017-12-13 17:32:32,415 INFO - Total elapsed time = 12.06721762418747 minutes
+2017-12-13 17:32:32,415 INFO - ----------------------------------------
+2017-12-13 17:44:39,384 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 17:44:39,386 INFO - Defensive value = 2.25
+2017-12-13 17:44:39,386 INFO - Win rate = 0.515
+2017-12-13 17:44:39,386 INFO - Average match time = 3.63485501408577 seconds
+2017-12-13 17:44:39,387 INFO - Total elapsed time = 12.116183380285898 minutes
+2017-12-13 17:44:39,387 INFO - ----------------------------------------
+2017-12-13 17:56:50,000 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 17:56:50,002 INFO - Defensive value = 2.5
+2017-12-13 17:56:50,003 INFO - Win rate = 0.495
+2017-12-13 17:56:50,003 INFO - Average match time = 3.653077906370163 seconds
+2017-12-13 17:56:50,004 INFO - Total elapsed time = 12.17692635456721 minutes
+2017-12-13 17:56:50,004 INFO - ----------------------------------------
+2017-12-13 18:09:02,857 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 18:09:02,859 INFO - Defensive value = 2.75
+2017-12-13 18:09:02,859 INFO - Win rate = 0.515
+2017-12-13 18:09:02,859 INFO - Average match time = 3.6642764270305634 seconds
+2017-12-13 18:09:02,860 INFO - Total elapsed time = 12.214254756768545 minutes
+2017-12-13 18:09:02,860 INFO - ----------------------------------------
+2017-12-13 18:21:04,088 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 18:21:04,090 INFO - Defensive value = 3.0
+2017-12-13 18:21:04,090 INFO - Win rate = 0.53
+2017-12-13 18:21:04,090 INFO - Average match time = 3.6061491537094117 seconds
+2017-12-13 18:21:04,091 INFO - Total elapsed time = 12.020497179031372 minutes
+2017-12-13 18:21:04,091 INFO - ----------------------------------------
+2017-12-13 18:33:08,682 INFO - AB_defensive vs cpu_agent_AB_improved
+2017-12-13 18:33:08,684 INFO - Defensive value = 3.25
+2017-12-13 18:33:08,685 INFO - Win rate = 0.475
+2017-12-13 18:33:08,685 INFO - Average match time = 3.622966549396515 seconds
+2017-12-13 18:33:08,685 INFO - Total elapsed time = 12.07655516465505 minutes
+2017-12-13 18:33:08,686 INFO - ----------------------------------------
+2017-12-13 18:33:08,686 INFO - ########################################
+2017-12-13 18:33:08,686 INFO - ----------------------------------------
+2017-12-13 18:33:08,687 INFO - Best win rate = 0.55
+2017-12-13 18:33:08,687 INFO - Best defensive value = 1.5
+2017-12-13 18:33:08,687 INFO - ----------------------------------------
+2017-12-13 18:33:08,687 INFO - ########################################
+2017-12-13 18:33:08,688 INFO - ----------------------------------------
+2017-12-13 18:33:08,753 INFO - 
+################################################################################
+
+2017-12-13 18:33:08,753 INFO - Waiting for container to complete...
+2017-12-13 18:33:08,913 INFO - Persisting outputs...
+2017-12-13 18:33:09,118 INFO - [success] Finishing execution in 14929 seconds for TaskInstance <TaskInstance: fiquinho/projects/aind-isolation/12 (id: gqzQeXii75V4YM6W5vbrcg)
+2017-12-13 18:33:09,131 INFO - Creating data module for output...
+2017-12-13 18:33:09,159 INFO - Data module created for output.

@@ -50,7 +50,7 @@ print("########################################")
 print("----------------------------------------")
 
 # Save statistics to results file
-with open(RESULTS, "w") as output:
+with open(RESULTS, "a") as output:
     output.write("AB_normal vs cpu_agent_AB_improved" + "\n")
     output.write("Win rate = {}".format(total_wins / NUMBER_OF_MATCHES) + "\n")
     output.write("Average match time = {} seconds".format(total_time / NUMBER_OF_MATCHES) + "\n")
@@ -112,7 +112,7 @@ for i in range(10):
     print("----------------------------------------")
 
     # Save statistics to results file
-    with open(RESULTS, "w") as output:
+    with open(RESULTS, "a") as output:
         output.write("AB_offensive vs cpu_agent_AB_improved" + "\n")
         output.write("Offensive value = {}".format(offensive_value) + "\n")
         output.write("Win rate = {}".format(total_wins / NUMBER_OF_MATCHES) + "\n")
@@ -180,7 +180,7 @@ for i in range(10):
     print("----------------------------------------")
 
     # Save statistics to results file
-    with open(RESULTS, "w") as output:
+    with open(RESULTS, "a") as output:
         output.write("AB_defensive vs cpu_agent_AB_improved" + "\n")
         output.write("Defensive value = {}".format(defensive_value) + "\n")
         output.write("Win rate = {}".format(total_wins / NUMBER_OF_MATCHES) + "\n")

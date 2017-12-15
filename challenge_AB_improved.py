@@ -39,8 +39,8 @@ RESULTS = "/output/1v1-results - {}-{}-{} - {}.{}hs.txt".format(DATE.day, DATE.m
 NUMBER_OF_MATCHES = 1000
 
 # Create agents to challenge cpu_agent_AB_improved
-offensive_scores = [1., 2., 3.]
-defensive_scores = [1., 2., 3.]
+offensive_scores = [1.75, 2., 2.5, 2.75]
+defensive_scores = [1., 1.5, 2.75, 3.]
 
 # Print general data of this particular run
 TITLE = """
