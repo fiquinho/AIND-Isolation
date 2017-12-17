@@ -53,7 +53,7 @@ def custom_score(game, player):
     return float(len(my_moves) - len(opponent_moves) + counter)
 
 
-def custom_score_2(game, player, defence = 1.75, offence = 0.5):
+def custom_score_2(game, player):
     """Calculate the heuristic value of a game state from the point of view
     of the given player.
 
@@ -77,8 +77,8 @@ def custom_score_2(game, player, defence = 1.75, offence = 0.5):
     """
 
     # My moves - Opponent moves -> Defensive style
-    # defence = 1.5
-    # offence = 0.5
+    defence = 1.5
+    offence = 0.5
 
     my_moves = len(game.get_legal_moves(player))
     opponent_moves = len(game.get_legal_moves(game.get_opponent(player)))
@@ -86,7 +86,7 @@ def custom_score_2(game, player, defence = 1.75, offence = 0.5):
     return float(my_moves * defence - opponent_moves * offence)
 
 
-def custom_score_3(game, player, defence = 0.5, offence = 1.75):
+def custom_score_3(game, player):
     """Calculate the heuristic value of a game state from the point of view
     of the given player.
 
@@ -110,8 +110,8 @@ def custom_score_3(game, player, defence = 0.5, offence = 1.75):
     """
 
     # My moves - Opponent moves -> Offensive style
-    # defence = 0.5
-    # offence = 2
+    defence = 0.5
+    offence = 2
 
     my_moves = len(game.get_legal_moves(player))
     opponent_moves = len(game.get_legal_moves(game.get_opponent(player)))
