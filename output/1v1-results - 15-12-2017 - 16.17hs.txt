@@ -1,0 +1,80 @@
+
+Playing 1000 matches against a CPU agent using AB_improved score.
+The objective of this run is to test different values of offensive 
+and defensive scores.
+Offensive values: [1.75, 2.0, 2.5, 2.75]
+Defensive values: [1.0, 1.5, 2.75, 3.0]
+----------------------------------------
+########################################
+----------------------------------------
+Offensive_1.75 vs CPU_agent
+Offensive value = 1.75
+Win rate = 0.485
+Average match time = 3.483692437887192 seconds
+Total elapsed time = 58.0615406314532 minutes
+----------------------------------------
+########################################
+----------------------------------------
+Offensive_2.0 vs CPU_agent
+Offensive value = 2.0
+Win rate = 0.519
+Average match time = 3.4908441274166107 seconds
+Total elapsed time = 58.18073545694351 minutes
+----------------------------------------
+########################################
+----------------------------------------
+Offensive_2.5 vs CPU_agent
+Offensive value = 2.5
+Win rate = 0.507
+Average match time = 3.465764434814453 seconds
+Total elapsed time = 57.76274058024089 minutes
+----------------------------------------
+########################################
+----------------------------------------
+Offensive_2.75 vs CPU_agent
+Offensive value = 2.75
+Win rate = 0.468
+Average match time = 3.450638432264328 seconds
+Total elapsed time = 57.5106405377388 minutes
+----------------------------------------
+########################################
+----------------------------------------
+Defensive_1.0 vs CPU_agent
+Defensive value = 1.0
+Win rate = 0.505
+Average match time = 3.6174588468074798 seconds
+Total elapsed time = 60.29098078012466 minutes
+----------------------------------------
+########################################
+----------------------------------------
+Defensive_1.5 vs CPU_agent
+Defensive value = 1.5
+Win rate = 0.513
+Average match time = 3.607795937538147 seconds
+Total elapsed time = 60.12993229230245 minutes
+----------------------------------------
+########################################
+----------------------------------------
+Defensive_2.75 vs CPU_agent
+Defensive value = 2.75
+Win rate = 0.497
+Average match time = 3.641677236557007 seconds
+Total elapsed time = 60.69462060928345 minutes
+----------------------------------------
+########################################
+----------------------------------------
+Defensive_3.0 vs CPU_agent
+Defensive value = 3.0
+Win rate = 0.507
+Average match time = 3.6401069922447205 seconds
+Total elapsed time = 60.66844987074534 minutes
+----------------------------------------
+########################################
+----------------------------------------
+Normal_player vs CPU_agent
+Win rate = 0.513
+Average match time = 3.5475104875564574 seconds
+Total elapsed time = 59.12517479260762 minutes
+----------------------------------------
+########################################
+----------------------------------------
